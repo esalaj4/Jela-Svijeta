@@ -14,6 +14,6 @@ class DescriptionResource extends JsonResource
      */
     public function toArray($request)
     {
-        return ['description' => $this->translate($request->get('lang'))->description,];
+        return ['description' => $this->translate($request->get('lang'))->description];
     }
 }

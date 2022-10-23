@@ -20,6 +20,7 @@ class TagSeeder extends Seeder
         $faker = \Faker\Factory::create();
         $faker->addProvider(new Restaurant($faker));
         static $order=1;
+
         $tag=Tag::Create([
          'title'=> $faker->fruitName() ,
          'slug' => 'tag'. $order++,
@@ -33,11 +34,9 @@ class TagSeeder extends Seeder
                  [
                      'locale'=>'jp',
                      'title' => $fakerJp->fruitName(),
-                     'tag_id'=>$tag->id,
-                 
+                     'tag_id'=>$tag->id, 
                  ]
              ]
-                 );
-       
+        );    
     }
 }
