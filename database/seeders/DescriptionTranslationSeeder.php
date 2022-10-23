@@ -15,11 +15,13 @@ class DescriptionTranslationSeeder extends Seeder
      */
     public function run()
     {
-        static $order = 1;
+
+    static $order = 1;
     $faker = \Faker\Factory::create();
     $faker->addProvider(new \Faker\Provider\Lorem($faker));
+
+
     foreach (\App\Models\Meal::all() as $index) {
-       
         DB::table('description_translations')->insert(
             [
                 'jp' =>
@@ -30,27 +32,9 @@ class DescriptionTranslationSeeder extends Seeder
                 ['description'    => $faker->sentence(),
                 'description_id' => $order,
                 'locale'         => 'en'],
-
-             
-
             ]
         );
         $order++;
-    }
-
-/*     $faker = \Faker\Factory::create();
-    $faker->addProvider(new \Faker\Provider\Lorem($faker));
-    foreach (\App\Models\Meal::all() as $index) {
-        static $order = 1;
-        DB::table('description_translations')->insert(
-            [
-                'en' =>
-                ['description'    => $faker->sentence(),
-                'description_id' => $order++,
-                'locale'         => 'en'],
-
-            ]
-        );
-    } */
+        }   
     }
 }

@@ -11,16 +11,13 @@ use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 class Tag extends Model implements TranslatableContract
 {
     use Translatable;
-
     use HasFactory;
+
     public $translatedAttributes = ['title'];
-    protected $fillable =[//'title',
-    'slug'];
+    protected $fillable =['slug'];
 
     public function meals()
     {
         return $this->belongsToMany(Meal::class);
     }
-    
-   
 }

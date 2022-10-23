@@ -11,12 +11,12 @@ class Ingredients extends Model
 {
     use HasFactory;
     use Translatable;
+
     protected $translatedAttributes =['title'];
     protected $fillable=['slug'];
+    
     public function meals()
     {
         return $this->belongsToMany(Meal::class);
     }
-
-
 }

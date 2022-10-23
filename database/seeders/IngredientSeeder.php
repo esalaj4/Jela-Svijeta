@@ -36,8 +36,8 @@ class IngredientSeeder extends Seeder
                      'title' => $fakerJp->dairyName(),
                      'ingredients_id'=>$ingredient->id,
                  
-                 ]
+                 ],
              ]
-                 );
+        );
     }
 }

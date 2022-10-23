@@ -20,6 +20,7 @@ class CategorySeeder extends Seeder
         $faker = \Faker\Factory::create();
         $faker->addProvider(new Restaurant($faker));
         static $order=1;
+
         $category=Category::Create([
          'title'=> $faker->dairyName() ,
          'slug' => 'category'. $order++,
@@ -37,6 +38,6 @@ class CategorySeeder extends Seeder
                  
                  ]
              ]
-                 );
+        );
     }
 }

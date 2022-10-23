@@ -7,7 +7,9 @@ namespace Database\Seeders;
 use App\Models\Tag;
 use App\Models\Meal;
 use App\Models\Category;
+use App\Models\IngredientMeal;
 use App\Models\Ingredients;
+use App\Models\MealTag;
 use Database\Seeders\TagSeeder;
 use Illuminate\Database\Seeder;
 use Database\Seeders\MealSeeder;
@@ -27,32 +29,31 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-
-        
-     /*    for($i=1;$i<6;$i++)
-        { $this->call([
-   
+    {   
+        for($i = 1; $i < 6; $i++) { 
+            $this->call([
              CategorySeeder::class
-         ]);} */
-/* 
-       for($i=1;$i<20;$i++)
-       { $this->call([
-           
+            ]);
+        }  
+ 
+       for($i = 1; $i < 20; $i++) {
+             $this->call([
             IngredientSeeder::class,
             TagSeeder::class,
-            MealSeeder::class, 
-            DescriptionSeeder::class
-        ]);} */
+            MealSeeder::class,    
+            ]);
+        } 
         
         $this->call([
             DescriptionSeeder::class,
-            DescriptionTranslationSeeder::class
-
+            DescriptionTranslationSeeder::class,
         ]); 
- 
 
-    
+        for($i = 1; $i <= 2; $i++) {
+            $this->call([
+            MealTagSeeder::class,
+            IngredientMealSeeder::class
+            ]);
+        }    
     }
-   
 }

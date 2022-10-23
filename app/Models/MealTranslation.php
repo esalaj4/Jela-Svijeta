@@ -11,6 +11,7 @@ use Astrotomic\Translatable\Translatable;
 class MealTranslation extends Model
 {
     use HasFactory;
+
     protected $fillable =['title'];
     public $timestamps = false;
 
@@ -20,6 +21,5 @@ class MealTranslation extends Model
         {
             $query->where('title','like','%' . request('search') . '%');
         }
-
     }
 }

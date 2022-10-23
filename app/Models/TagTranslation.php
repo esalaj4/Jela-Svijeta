@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class TagTranslation extends Model
 {
     use HasFactory;
+    
     protected $fillable =['title'];
     public $timestamps = false;
 }

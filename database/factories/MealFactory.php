@@ -27,8 +27,9 @@ class MealFactory extends Factory
         $faker = \Faker\Factory::create();
         $faker->addProvider(new Restaurant($faker));
         $categoryID=\App\Models\Category::all()->pluck('id')->toArray();
-         $categoryID[]=null;
-         static $order=1;
+        $categoryID[]=null;
+        static $order=1;
+         
         return[
          'title'=> $faker->foodName ,
          'slug' => 'meal'. $order++,

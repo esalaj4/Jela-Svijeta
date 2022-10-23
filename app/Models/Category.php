@@ -12,23 +12,12 @@ class Category extends Model
     use Translatable;
 
     protected $table = 'categories';
-
     protected $primaryKey='id';
-
     protected $fillable=['slug'];
-
     protected $translatedAttributes =['title'];
    
-
-
-
-
     public function meals()
     {
         return $this->hasMany(Meal::class);
     } 
-
-    
-
- 
 }

@@ -10,9 +10,9 @@ class Description extends Model
 {
     use HasFactory;
     use Translatable;
-
-   protected $fillable = ['meal_id'];
-   public $timestamps = false;
+    
+    protected $fillable = ['meal_id'];
+    public $timestamps = false;
     public $translatedAttributes=['description'];
 
     public function meal()

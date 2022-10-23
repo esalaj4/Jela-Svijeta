@@ -18,12 +18,12 @@ class MealSeeder extends Seeder
      */
     public function run()
     {
-       
         $faker = \Faker\Factory::create();
         $faker->addProvider(new Restaurant($faker));
         $categoryID=\App\Models\Category::all()->pluck('id')->toArray();
-         $categoryID[]=null;
-         static $order=1;
+        $categoryID[]=null;
+        static $order=1;
+
         $meal=Meal::Create([
          'title'=> $faker->foodName ,
          'slug' => 'meal'. $order++,
@@ -42,8 +42,6 @@ class MealSeeder extends Seeder
                  
                  ]
              ]
-                 );
-                 
-       
+         );    
     }
 }

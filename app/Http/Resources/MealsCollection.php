@@ -15,9 +15,7 @@ class MealsCollection extends ResourceCollection
     public function toArray($request)
     {
         return [
-            //'meta'=>$request->get('per_page'),
-           'data'=> $this->collection,
-
+            'data' => $this->collection,
         ];
     }
 }

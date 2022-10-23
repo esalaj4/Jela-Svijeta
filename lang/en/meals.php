@@ -7,7 +7,8 @@ return [
     'search' => "search",
     'NoCat' => 'No category',
     'Ing' => 'Ingredients:',
-    'Tags'=>'Tags'
+    'Tags'=>'Tags',
+    'SearchText' =>"Search meals by title"
 
 ]
 

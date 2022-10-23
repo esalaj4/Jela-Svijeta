@@ -18,7 +18,6 @@ return new class extends Migration
             $table->text('description');
             $table->unsignedBigInteger('description_id');
             $table->string('locale')->index();
-
             $table->unique(['description_id', 'locale']);
             $table->foreign('description_id')->references('id')->on('descriptions');
         });

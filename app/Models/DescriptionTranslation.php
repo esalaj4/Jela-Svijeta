@@ -10,6 +10,5 @@ class DescriptionTranslation extends Model
     use HasFactory;
 
     protected $fillable = ['description'];
-
     public $timestamps = false;
 }
