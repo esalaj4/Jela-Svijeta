@@ -40,11 +40,11 @@ class MealController extends Controller
 
         if($request->tags) {
             $tags = explode(',',$request->tags);
-            $meal_query->whereHas('tags',function($query) use($request)
+            $meal_query->whereHas('tags',function($query) use($tags)
             {
-                $tags = explode(',',$request->tags);
                 $query->whereIn('tag_id',$tags);
-            });
+            },  '>=',
+            count($tags));
         }
 
         if($with) {
@@ -62,7 +62,7 @@ class MealController extends Controller
         if ($per_page) {
         return Meals::collection($meal_query->paginate($per_page));
         } else {
-            return Meals::collection($meal_query->get());
+            return Meals::collection($meal_query->paginate(10));
         }
     }
 }

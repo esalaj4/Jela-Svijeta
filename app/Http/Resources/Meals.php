@@ -32,9 +32,9 @@ class Meals extends JsonResource
             'id'          => $this->id,
             'title'       => $this->translate($request->get('lang'))->title,
             'status'      => $status,
-            'ingredients' => IngredientResource::collection($this->whenLoaded('ingredient')),
+            'ingredients' => IngredientResource::collection($this->whenLoaded('ingredients')),
             'category'    => new CategoryResource($this->whenLoaded('category')),
-            'tag'         => TagResource::collection($this->whenLoaded('tag')),
+            'tag'         => TagResource::collection($this->whenLoaded('tags')),
             'description' => new DescriptionResource($this->description),
         ];
     }
